@@ -1,5 +1,5 @@
 async function asyncTyped(DOMelement, message, typedParams = {
-   typeSpeed: 30,
+   typeSpeed: 10,
 }) {
    return new Promise(resolve => {
       if(typeof message === 'string')
@@ -19,9 +19,15 @@ async function asyncTyped(DOMelement, message, typedParams = {
 }
 
 $(document).ready(async function () {
-    await asyncTyped('#start-message', startMessage);
+    await asyncTyped(
+        '#start-message',
+        startMessage,
+        {
+            typeSpeed: 10,
+            showCursor: false
+        }
+    );
 
-    console.log('Animation (start-message) completed!');
     $('.choice').show();
 
     $('#ilia').on('click', function () {
@@ -32,10 +38,23 @@ $(document).ready(async function () {
     })
 
     await Promise.all([
-        asyncTyped('#ilia-message', `<b>Ilia</b><br>Technical Lead / <br>Senior Software Engineer`, {typeSpeed: 30, showCursor: false}),
-        asyncTyped('#alex-message', `<b>Alexander</b><br>TeamLead / <br>Full-stack Engineer`, {typeSpeed: 30, showCursor: false})
+        asyncTyped(
+            '#ilia-message',
+            `<b>Ilia</b><br>Technical Lead / Senior Software Engineer`,
+            {
+                typeSpeed: 5,
+                showCursor: false
+            }
+        ),
+        asyncTyped(
+            '#alex-message',
+            `<b>Alexander</b><br>Team Lead / Full-stack Engineer`,
+            {
+                typeSpeed: 5,
+                showCursor: false
+            }
+        )
     ])
-    console.log('Animation (alex and ilia message) completed!');
 })
 
 
