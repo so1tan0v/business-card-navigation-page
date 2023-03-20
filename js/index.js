@@ -1,21 +1,17 @@
 async function asyncTyped(DOMelement, message, typedParams = {
-   typeSpeed: 10,
+    typeSpeed: defaultTextPrintTime,
 }) {
-   return new Promise(resolve => {
-      if(typeof message === 'string')
-         message = [message];
+    return new Promise(resolve => {
+        if(typeof message === 'string')
+           message = [message];
 
-      typedParams.strings = message
-      let typed = new Typed(DOMelement, typedParams);
+        typedParams.strings = message;
+        typedParams.onComplete = () => {
+            resolve(true)
+        }
 
-      let interval = setInterval(() => {
-         if(typed.typingComplete) {
-            clearInterval(interval);
-            resolve(true);
-         }
-      }, 100)
-   })
-
+        new Typed(DOMelement, typedParams);
+    })
 }
 
 $(document).ready(async function () {
@@ -23,7 +19,7 @@ $(document).ready(async function () {
         '#start-message',
         startMessage,
         {
-            typeSpeed: 10,
+            typeSpeed: defaultTextPrintTime,
             showCursor: false
         }
     );
