@@ -93,9 +93,3 @@ a {
 .green {
     color: #00cfc8;
 }
-
-.quotes .box.box-colored:hover,
-.quotes .box.box-colored:hover ~ .bg {
-    transition-duration: 0.15ms;
-    background-color: rgb(5, 13, 55);
-}
