@@ -14,6 +14,20 @@ async function asyncTyped(DOMelement, message, typedParams = {
     })
 }
 
+async function sleep(time) {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(true), time)
+    })
+}
+
+(async function titleChanger() {
+    for(let item of assembly_HelloWorld) {
+        $('title').text(item);
+        await sleep(titleChangeTime);
+    }
+    await titleChanger();
+})();
+
 $(document).ready(async function () {
     await asyncTyped(
         '#start-message',
@@ -52,5 +66,3 @@ $(document).ready(async function () {
         )
     ])
 })
-
-
