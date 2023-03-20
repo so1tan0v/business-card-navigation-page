@@ -1,6 +1,6 @@
 const startMessage = `
-    Welcome to the start page of the Soltanov brothers.<br>
-    We are two brothers developers.<br><br><span class="green" style="font-weight: bold">Whose resume do you want to visit?</span>
+    <div class="welcome-message">Welcome to the start page</dev>
+    <br><br><span class="green" style="font-weight: bold">Whose business card do you want to view?</span>
 `;
 
 
