@@ -50,7 +50,7 @@ $(document).ready(async function () {
     await Promise.all([
         asyncTyped(
             '#ilia-message',
-            `<b>Ilia</b><br>Technical Lead / Senior Software Engineer`,
+            `<b>Ilia</b><br>Senior Software Engineer`,
             {
                 typeSpeed: 5,
                 showCursor: false
@@ -58,7 +58,7 @@ $(document).ready(async function () {
         ),
         asyncTyped(
             '#alex-message',
-            `<b>Alexander</b><br>Team Lead / Full-stack Engineer`,
+            `<b>Alexander</b><br>Senior Software Engineer`,
             {
                 typeSpeed: 5,
                 showCursor: false
